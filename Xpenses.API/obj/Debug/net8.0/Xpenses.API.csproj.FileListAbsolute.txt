@@ -24,3 +24,11 @@ C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\obj\Debug\net8.0\refint\Xpe
 C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\obj\Debug\net8.0\Xpenses.API.pdb
 C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\obj\Debug\net8.0\Xpenses.API.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\obj\Debug\net8.0\ref\Xpenses.API.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\obj\Debug\net8.0\Xpenses.API.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\obj\Debug\net8.0\Xpenses.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\obj\Debug\net8.0\Xpenses.API.csproj.CopyComplete

@@ -1,5 +1,12 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen( options => options.CustomSchemaIds(n => n.FullName));
+builder.Services.AddTransient<Handler>();
+
 var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 string version = "v1";
 
@@ -39,3 +46,4 @@ public class Handler
         };
     } 
 }
+
