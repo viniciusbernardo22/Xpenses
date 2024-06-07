@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using Xpenses.API.Data;
+using Xpenses.Core.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 var connection = builder.Configuration.GetConnectionString("Default");
@@ -17,21 +19,20 @@ app.UseSwaggerUI();
 
 string version = "v1";
 
-app.MapPost($"/{version}/transaction", (Request request, Handler handler) => handler.Handle(request))
-    .WithName("Transactions: Create")
-    .WithSummary("Cria uma nova transação")
+app.MapGet("/", () => "Ok");
+
+app.MapPost($"/{version}/categories",
+        (Request request, Handler handler) => handler.Handle(request))
+    .WithName("Categories: Create")
+    .WithSummary("Cria uma nova categoria")
     .Produces<Response>();
 
 app.Run();
 
 public class Request
 {
-    public string Title { get; set; } = String.Empty;
-    public DateTime CreatedAt { get; set; } = DateTime.Now;
-    public int Type { get; set; }
-    public decimal Amount { get; set; }
-    public long CategoryId { get; set; }
-    public string UserId { get; set; } = string.Empty;
+    public string Title { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
     
 }
 
@@ -42,14 +43,23 @@ public class Response
 }
 
 
-public class Handler
+public class Handler(AppDbContext ctx)
 {
     public Response Handle(Request request)
     {
+        var category = new Category
+        {
+            Title = request.Title,
+            Description = request.Description
+        };
+        
+        ctx.Categories.Add(category);
+        ctx.SaveChanges();
+        
         return new Response
         {
-            Id = 4,
-            Title = request.Title
+            Id = category.Id,
+            Title = category.Title
         };
     } 
 }
