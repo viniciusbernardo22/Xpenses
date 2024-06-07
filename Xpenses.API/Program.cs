@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using Xpenses.API.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+var connection = builder.Configuration.GetConnectionString("Default");
+
+builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(connection));
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen( options => options.CustomSchemaIds(n => n.FullName));
 builder.Services.AddTransient<Handler>();
