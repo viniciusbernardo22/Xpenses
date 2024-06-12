@@ -16,6 +16,12 @@ public class Response<TData>
         _statusCode = code;
     }
 
+    public Response(string message)
+    {
+        _statusCode = 500;
+        Message = message;
+    }
+
     public TData? Data { get; set; }
     public string Message { get; set; }
     
