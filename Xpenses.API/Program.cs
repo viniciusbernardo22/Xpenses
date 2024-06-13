@@ -48,12 +48,6 @@ app.MapGet("/v1/categories/{id}", async (long id, ICategoryHandler handler) =>
     .WithSummary("Procura uma categoria pelo Id")
     .Produces<Response<Category>>();
 
-app.MapPost($"/v1/categories", async (CreateCategoryRequest request, ICategoryHandler handler)
-        => await handler.CreateAsync(request))
-    .WithName("Categories: Create")
-    .WithSummary("Cria uma nova categoria")
-    .Produces<Response<Category>>();
-
 app.MapPut("/v1/categories/{id}", async (long id, UpdateCategoryRequest request, ICategoryHandler handler) =>
     { 
         request.Id = id;

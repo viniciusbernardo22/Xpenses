@@ -6,6 +6,7 @@ namespace Xpenses.Core.Handlers;
 
 public interface ICategoryHandler
 {
+    
     Task<Response<Category?>> GetByIdAsync(GetCategoryByIdRequest request);
     Task<PagedResponse<List<Category>>> GetAllAsync(GetAllCategoriesRequest request);
     Task<Response<Category?>> CreateAsync(CreateCategoryRequest request);
