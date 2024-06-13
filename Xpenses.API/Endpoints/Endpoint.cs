@@ -10,7 +10,11 @@ public static class Endpoint
         var endpoints = app
             .MapGroup("v1/categories")
             .WithTags("Categories")
-            .MapEndpoint<CreateCategoryEndpoint>();
+            .MapEndpoint<CreateCategoryEndpoint>()
+            .MapEndpoint<GetAllCategoriesEndpoint>()
+            .MapEndpoint<GetCategoryByIdEndpoint>()
+            .MapEndpoint<UpdateCategoryEndpoint>()
+            .MapEndpoint<DeleteCategoryEndpoint>();
     }
 
     private static IEndpointRouteBuilder MapEndpoint<T>(this IEndpointRouteBuilder app) where T : IEndpoint

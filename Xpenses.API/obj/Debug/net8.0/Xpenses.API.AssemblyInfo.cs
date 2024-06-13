@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Xpenses.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+605f76059cb032c9a762cc7c1443ebdaddbae863")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b9d4e3b9668d021ff4279f878216bbec64db187")]
 [assembly: System.Reflection.AssemblyProductAttribute("Xpenses.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Xpenses.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
