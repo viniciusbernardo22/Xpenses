@@ -7,7 +7,7 @@ namespace Xpenses.Core.Handlers;
 
 public interface ITransactionHandler
 {
-    Task<PagedResponse<Transaction?>> GetByPeriodAsync(GetTransactionsByPeriodRequest request);
+    Task<PagedResponse<List<Transaction>?>> GetByPeriodAsync(GetTransactionsByPeriodRequest request);
 
     Task<Response<Transaction?>> GetByIdAsync(GetTransactionByIdRequest request);
  
