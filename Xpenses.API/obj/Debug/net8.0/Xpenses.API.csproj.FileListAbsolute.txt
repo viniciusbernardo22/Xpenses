@@ -138,3 +138,14 @@ C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\obj\Debug\net8.0\refint\Xpe
 C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\obj\Debug\net8.0\Xpenses.API.pdb
 C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\obj\Debug\net8.0\Xpenses.API.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\obj\Debug\net8.0\ref\Xpenses.API.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\Grpc.Net.Common.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\OpenTelemetry.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\OpenTelemetry.Api.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\OpenTelemetry.Api.ProviderBuilderExtensions.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\OpenTelemetry.Exporter.OpenTelemetryProtocol.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\OpenTelemetry.Extensions.Hosting.dll
+C:\Users\Usuario\Desktop\Courses\Xpenses\Xpenses.API\bin\Debug\net8.0\OpenTelemetry.Instrumentation.AspNetCore.dll
