@@ -1,4 +1,5 @@
-﻿using Xpenses.API.Common.Api;
+﻿using Microsoft.AspNetCore.Mvc;
+using Xpenses.API.Common.Api;
 using Xpenses.Core.Entities;
 using Xpenses.Core.Handlers;
 using Xpenses.Core.Requests.Transactions;
@@ -14,7 +15,7 @@ public class GetTransactionByIdEndpoint : IEndpoint
         .WithSummary("Busca uma transação pelo Id")
         .Produces<Response<Transaction?>>();
 
-    private static async Task<IResult> HandleAsync(ITransactionHandler handler, long id)
+    private static async Task<IResult> HandleAsync(ITransactionHandler handler, [FromQuery] long id)
     {
         var request = new GetTransactionByIdRequest
         {
