@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Xpenses.API.Data;
+using Xpenses.Core.Common.Extensions;
 using Xpenses.Core.Entities;
 using Xpenses.Core.Handlers;
 using Xpenses.Core.Requests.Transactions;
@@ -13,7 +14,34 @@ public class TransactionHandler(AppDbContext ctx) : ITransactionHandler
     
     public async Task<PagedResponse<List<Transaction>?>> GetByPeriodAsync(GetTransactionsByPeriodRequest request)
     {
-        throw new NotImplementedException();
+        try
+        {
+            request.StartDate ??= DateTime.Now.GetFirstDay();
+            request.EndDate ??= DateTime.Now.GetLastDay();
+
+            var cmd = ctx.Transactions
+                .AsNoTracking()
+                .Where(x => 
+                            x.CreatedAt >= request.StartDate 
+                            && x.CreatedAt <= request.EndDate 
+                            && x.UserId == request.UserId)
+                .OrderBy(x => x.CreatedAt);
+
+            var count = await cmd.CountAsync();
+            
+            var transactions = await cmd.
+                Skip((request.PageNumber - 1) * request.PageSize) 
+                .Take(request.PageSize)
+                .ToListAsync();
+
+
+            return new PagedResponse<List<Transaction>?>(transactions, count, request.PageNumber, request.PageSize);
+
+        }
+        catch (Exception e)
+        {
+            return new PagedResponse<List<Transaction>?>(null, 500, $"{errorFlag} - {e.Message}");
+        }
     }
 
     public async Task<Response<Transaction?>> GetByIdAsync(GetTransactionByIdRequest request)
