@@ -16,6 +16,7 @@ builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(connection));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen( options => options.CustomSchemaIds(n => n.FullName));
 builder.Services.AddTransient<ICategoryHandler, CategoryHandler>();
+builder.Services.AddTransient<ITransactionHandler, TransactionHandler>();
 
 // Open telemetry configuration //
 builder.Services.AddOpenTelemetry()
