@@ -80,6 +80,10 @@
               "target": "Package",
               "version": "[1.8.1, )"
             },
+            "OpenTelemetry.Instrumentation.Http": {
+              "target": "Package",
+              "version": "[1.8.1, )"
+            },
             "Swashbuckle.aspnetcore": {
               "target": "Package",
               "version": "[6.6.2, )"

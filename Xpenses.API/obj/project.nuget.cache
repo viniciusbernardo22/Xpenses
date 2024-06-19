@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pxxdt5usAAOUtJPDLW+l3Ll4Ube4/L6d9Vn1hOlixB1ToEFQvx5cZDvoF6NnM/pkF/3LGTtKy+7H1vqtPeiABg==",
+  "dgSpecHash": "EEfWdiwHHyxsufobRIVkrMkg0o3qEhrCCZny76yMeoonw732+OoO1RQlBA/IIiP0cznL3uEcsUEMnpsomWCYpQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Usuario\\Desktop\\Courses\\Xpenses\\Xpenses.API\\Xpenses.API.csproj",
   "expectedPackageFiles": [
@@ -66,6 +66,7 @@
     "C:\\Users\\Usuario\\.nuget\\packages\\opentelemetry.exporter.opentelemetryprotocol\\1.9.0\\opentelemetry.exporter.opentelemetryprotocol.1.9.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\opentelemetry.extensions.hosting\\1.9.0\\opentelemetry.extensions.hosting.1.9.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\opentelemetry.instrumentation.aspnetcore\\1.8.1\\opentelemetry.instrumentation.aspnetcore.1.8.1.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\opentelemetry.instrumentation.http\\1.8.1\\opentelemetry.instrumentation.http.1.8.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
