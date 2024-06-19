@@ -6,12 +6,12 @@ namespace Xpenses.API.Data.Mappings.Identity;
 
 public class IdentityUserLoginMapping : IEntityTypeConfiguration<IdentityUserLogin<long>>
 {
-    public void Configure(EntityTypeBuilder<IdentityUserLogin<long>> builder)
+    public void Configure(EntityTypeBuilder<IdentityUserLogin<long>> b)
     {
-        builder.ToTable("IdentityUserLogin");
-        builder.HasKey(l => new { l.LoginProvider, l.ProviderKey });
-        builder.Property(l => l.LoginProvider).HasMaxLength(128);
-        builder.Property(l => l.ProviderKey).HasMaxLength(128);
-        builder.Property(u => u.ProviderDisplayName).HasMaxLength(255);
+        b.ToTable("IdentityUserLogin");
+        b.HasKey(l => new { l.LoginProvider, l.ProviderKey });
+        b.Property(l => l.LoginProvider).HasMaxLength(128);
+        b.Property(l => l.ProviderKey).HasMaxLength(128);
+        b.Property(u => u.ProviderDisplayName).HasMaxLength(255);
     }
 }
