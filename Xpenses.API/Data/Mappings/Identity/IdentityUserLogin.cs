@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Xpenses.API.Data.Mappings;
 
-public class IdentityApplicationUserLogin : IEntityTypeConfiguration<IdentityUserLogin<long>>
+public class IdentityUserLogin : IEntityTypeConfiguration<IdentityUserLogin<long>>
 {
     public void Configure(EntityTypeBuilder<IdentityUserLogin<long>> b)
     {
