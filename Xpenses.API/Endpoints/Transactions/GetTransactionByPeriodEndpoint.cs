@@ -12,7 +12,7 @@ public class GetTransactionByPeriodEndpoint : IEndpoint
 {
     public static void Map(IEndpointRouteBuilder app)
     =>
-        app.MapGet("/", HandleAsync)
+        app.MapGet("/{startDate}/{endDate}", HandleAsync)
             .WithName("Transactions: GetByPeriod")
             .WithSummary("Busca uma lista de transações pelo range de datas")
             .Produces<PagedResponse<List<Transaction>?>>();
@@ -33,6 +33,7 @@ public class GetTransactionByPeriodEndpoint : IEndpoint
         };
 
         var result = await handler.GetByPeriodAsync(request);
+        
         return result.IsSuccess
             ? TypedResults.Ok(result)
             : TypedResults.BadRequest(result.Data);
