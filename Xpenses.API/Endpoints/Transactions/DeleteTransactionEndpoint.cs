@@ -15,10 +15,14 @@ public class DeleteTransactionEndpoint : IEndpoint
             .WithSummary("Exclui uma transação")
             .Produces<Response<Transaction?>>();
 
-    private static async Task<IResult> HandleAsync(ITransactionHandler handler, DeleteTransactionRequest request)
+    private static async Task<IResult> HandleAsync(ITransactionHandler handler, long id)
     {
-        request.UserId = "123";
-
+        var request = new DeleteTransactionRequest
+        {
+            UserId = "123",
+            Id = id
+        };
+            
         var result = await handler.DeleteAsync(request);
 
         return result.IsSuccess
