@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Xpenses.API.Data.Mappings;
+namespace Xpenses.API.Data.Mappings.Identity;
 
 public class IdentityUserLogin : IEntityTypeConfiguration<IdentityUserLogin<long>>
 {

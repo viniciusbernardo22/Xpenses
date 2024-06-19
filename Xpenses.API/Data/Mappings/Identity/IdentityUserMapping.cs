@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Xpenses.API.Models;
 
-namespace Xpenses.API.Data.Mappings;
+namespace Xpenses.API.Data.Mappings.Identity;
 
 public class IdentityUserMapping : IEntityTypeConfiguration<User>
 {
