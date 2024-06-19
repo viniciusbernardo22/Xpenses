@@ -5,7 +5,7 @@ using Xpenses.API.Models;
 
 namespace Xpenses.API.Data.Mappings;
 
-public class IdentityApplicationUserMapping : IEntityTypeConfiguration<User>
+public class IdentityUserMapping : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> b)
     {
