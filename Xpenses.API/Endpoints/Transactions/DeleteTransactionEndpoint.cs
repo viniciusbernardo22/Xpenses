@@ -10,7 +10,7 @@ public class DeleteTransactionEndpoint : IEndpoint
 {
     
     public static void Map(IEndpointRouteBuilder app)
-        => app.MapPost("/", HandleAsync)
+        => app.MapDelete("/", HandleAsync)
             .WithName("Transactions: Delete")
             .WithSummary("Exclui uma transação")
             .Produces<Response<Transaction?>>();
