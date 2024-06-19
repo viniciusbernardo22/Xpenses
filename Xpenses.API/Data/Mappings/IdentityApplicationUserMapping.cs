@@ -5,11 +5,11 @@ using Xpenses.API.Models;
 
 namespace Xpenses.API.Data.Mappings;
 
-public class IdentityApplicationUserMapping : IEntityTypeConfiguration<ApplicationUser>
+public class IdentityApplicationUserMapping : IEntityTypeConfiguration<User>
 {
-    public void Configure(EntityTypeBuilder<ApplicationUser> b)
+    public void Configure(EntityTypeBuilder<User> b)
     {
-        b.ToTable("IdentityApplicationUser");
+        b.ToTable("IdentityUser");
         
         b.HasKey( u => u.Id);
 

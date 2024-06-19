@@ -2,7 +2,7 @@
 
 namespace Xpenses.API.Models;
 
-public class ApplicationUser : IdentityUser<long>
+public class User : IdentityUser<long>
 {
     // RBAC 
     public List<IdentityRole<long>>? Roles { get; set; }

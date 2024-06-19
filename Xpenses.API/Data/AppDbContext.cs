@@ -9,7 +9,7 @@ namespace Xpenses.API.Data;
 
 public class AppDbContext(DbContextOptions<AppDbContext> options) 
     : IdentityDbContext<
-        ApplicationUser, 
+        User, 
         IdentityRole<long>, 
         long,
         IdentityUserClaim<long>,
