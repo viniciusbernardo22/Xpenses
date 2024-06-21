@@ -18,7 +18,7 @@ public class IdentityUserMapping : IEntityTypeConfiguration<User>
 
         b.Property(u => u.Email).HasMaxLength(180);
         b.Property(u => u.NormalizedEmail).HasMaxLength(180);
-        b.Property(u => u.UserName).HasMaxLength(180);
+        b.Property(u => u.UserName).HasMaxLength(180).IsRequired();
         b.Property(u => u.NormalizedUserName).HasMaxLength(180);
         b.Property(u => u.PhoneNumber).HasMaxLength(20);
         b.Property(u => u.ConcurrencyStamp).IsConcurrencyToken();
