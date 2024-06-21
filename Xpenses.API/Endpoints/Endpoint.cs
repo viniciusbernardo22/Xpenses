@@ -1,7 +1,9 @@
 ﻿using Xpenses.API.Common.Api;
 using Xpenses.API.Endpoints.Categories;
 using Xpenses.API.Endpoints.HealthCheck;
+using Xpenses.API.Endpoints.Identity;
 using Xpenses.API.Endpoints.Transactions;
+using Xpenses.API.Models;
 
 namespace Xpenses.API.Endpoints;
 
@@ -14,7 +16,15 @@ public static class Endpoint
         endpoints.MapGroup("/")
             .WithTags("HealthCheck")
                 .MapEndpoint<GetApplicationHealthCheck>();
-        
+
+        endpoints.MapGroup("v1/identity")
+            .WithTags("Identity")
+            .MapIdentityApi<User>();
+
+        endpoints.MapGroup("v1/identity")
+            .WithTags("Identity")
+            .MapEndpoint<LogoutEndpoint>();
+            
         
             endpoints.MapGroup("v1/categories")
                 .WithTags("Categories")
