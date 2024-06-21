@@ -1,5 +1,6 @@
 ﻿using Xpenses.API.Common.Api;
 using Xpenses.API.Endpoints.Categories;
+using Xpenses.API.Endpoints.HealthCheck;
 using Xpenses.API.Endpoints.Transactions;
 
 namespace Xpenses.API.Endpoints;
@@ -9,7 +10,12 @@ public static class Endpoint
     public static void MapEndpoints(this WebApplication app)
     {
         var endpoints = app;
-            
+
+        endpoints.MapGroup("/")
+            .WithTags("HealthCheck")
+                .MapEndpoint<GetApplicationHealthCheck>();
+        
+        
             endpoints.MapGroup("v1/categories")
                 .WithTags("Categories")
                     .MapEndpoint<CreateCategoryEndpoint>()
