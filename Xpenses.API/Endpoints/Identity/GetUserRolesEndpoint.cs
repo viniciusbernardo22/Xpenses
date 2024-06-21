@@ -11,8 +11,7 @@ public class GetUserRolesEndpoint : IEndpoint
     public static void Map(IEndpointRouteBuilder app)
         => app.MapGet("/roles", HandleAsync)
             .WithName("Identity: Get User Roles")
-            .WithSummary("Busca roles do usuario")
-            .RequireAuthorization();
+            .WithSummary("Busca roles do usuario");
     
     
     private static IResult HandleAsync(ClaimsPrincipal userInfo)

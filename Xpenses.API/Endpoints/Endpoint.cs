@@ -19,20 +19,25 @@ public static class Endpoint
 
         endpoints.MapGroup("v1/identity")
             .WithTags("Identity")
+            .RequireAuthorization()
             .MapEndpoint<LogoutEndpoint>()
             .MapEndpoint<GetUserRolesEndpoint>()
             .MapIdentityApi<User>();
-        
-            endpoints.MapGroup("v1/categories")
-                .WithTags("Categories")
-                    .MapEndpoint<CreateCategoryEndpoint>()
-                    .MapEndpoint<GetAllCategoriesEndpoint>()
-                    .MapEndpoint<GetCategoryByIdEndpoint>()
-                    .MapEndpoint<UpdateCategoryEndpoint>()
-                    .MapEndpoint<DeleteCategoryEndpoint>();
+           
+
+        endpoints.MapGroup("v1/categories")
+            .WithTags("Categories")
+            .RequireAuthorization()
+            .MapEndpoint<CreateCategoryEndpoint>()
+            .MapEndpoint<GetAllCategoriesEndpoint>()
+            .MapEndpoint<GetCategoryByIdEndpoint>()
+            .MapEndpoint<UpdateCategoryEndpoint>()
+            .MapEndpoint<DeleteCategoryEndpoint>();
+                
 
             endpoints.MapGroup("v1/transactions")
                 .WithTags("Transactions")
+                .RequireAuthorization()
                 .MapEndpoint<CreateTransactionEndpoint>()
                 .MapEndpoint<GetTransactionByIdEndpoint>()
                 .MapEndpoint<GetTransactionByPeriodEndpoint>()
