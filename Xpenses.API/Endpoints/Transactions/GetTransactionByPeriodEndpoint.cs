@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
 using Xpenses.API.Common.Api;
 using Xpenses.Core;
 using Xpenses.Core.Entities;
@@ -17,7 +18,9 @@ public class GetTransactionByPeriodEndpoint : IEndpoint
             .WithSummary("Busca uma lista de transações pelo range de datas")
             .Produces<PagedResponse<List<Transaction>?>>();
 
-    private static async Task<IResult> HandleAsync(ITransactionHandler handler, 
+    private static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
+        ITransactionHandler handler, 
         [FromQuery] DateTime? startDate = null,
         [FromQuery] DateTime? endDate = null,
         [FromQuery] int pageNumber = Configuration.DefaultPageNumber, 
@@ -25,7 +28,7 @@ public class GetTransactionByPeriodEndpoint : IEndpoint
     {
         var request = new GetTransactionsByPeriodRequest
         {
-            UserId = "123",
+            UserId = user.Identity?.Name ?? string.Empty,
             PageNumber = pageNumber,
             PageSize = pageSize,
             StartDate = startDate,

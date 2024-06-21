@@ -1,4 +1,5 @@
-﻿using Xpenses.API.Common.Api;
+﻿using System.Security.Claims;
+using Xpenses.API.Common.Api;
 using Xpenses.Core.Entities;
 using Xpenses.Core.Handlers;
 using Xpenses.Core.Requests.Transactions;
@@ -15,11 +16,11 @@ public class DeleteTransactionEndpoint : IEndpoint
             .WithSummary("Exclui uma transação")
             .Produces<Response<Transaction?>>();
 
-    private static async Task<IResult> HandleAsync(ITransactionHandler handler, long id)
+    private static async Task<IResult> HandleAsync(ClaimsPrincipal user, ITransactionHandler handler, long id)
     {
         var request = new DeleteTransactionRequest
         {
-            UserId = "123",
+            UserId = user.Identity?.Name ?? string.Empty,
             Id = id
         };
             

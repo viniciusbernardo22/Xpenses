@@ -1,4 +1,5 @@
-﻿using Xpenses.API.Common.Api;
+﻿using System.Security.Claims;
+using Xpenses.API.Common.Api;
 using Xpenses.Core.Entities;
 using Xpenses.Core.Handlers;
 using Xpenses.Core.Requests.Categories;
@@ -15,9 +16,9 @@ public class UpdateCategoryEndpoint : IEndpoint
             .Produces<Response<Category?>>();
     
     
-    private static async Task<IResult> HandleAsync(ICategoryHandler handler, UpdateCategoryRequest request, long id)
+    private static async Task<IResult> HandleAsync(ClaimsPrincipal user, ICategoryHandler handler, UpdateCategoryRequest request, long id)
     {
-        request.UserId = "123";
+        request.UserId = user.Identity?.Name ?? string.Empty;
         request.Id = id;
         
         var result = await handler.UpdateAsync(request);
@@ -25,7 +26,5 @@ public class UpdateCategoryEndpoint : IEndpoint
         return result.IsSuccess 
             ? TypedResults.Ok(result)
             : TypedResults.BadRequest(result);
-        
-        
     }
 }

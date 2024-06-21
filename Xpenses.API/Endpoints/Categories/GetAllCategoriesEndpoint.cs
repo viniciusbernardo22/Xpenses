@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
 using Xpenses.API.Common.Api;
 using Xpenses.Core;
 using Xpenses.Core.Entities;
@@ -17,13 +18,14 @@ public class GetAllCategoriesEndpoint : IEndpoint
         .Produces<PagedResponse<List<Category?>>>();
     
     private static async Task<IResult> HandleAsync(
+        ClaimsPrincipal user,
         ICategoryHandler handler, 
         [FromQuery] int pageNumber = Configuration.DefaultPageNumber, 
         [FromQuery] int pageSize = Configuration.DefaultPageSize)
     {
         var request = new GetAllCategoriesRequest
         {
-            UserId = "123",
+            UserId = user.Identity?.Name ?? string.Empty,
             PageNumber = pageNumber,
             PageSize = pageSize
         };

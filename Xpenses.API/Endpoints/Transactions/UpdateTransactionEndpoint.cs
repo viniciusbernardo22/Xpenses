@@ -1,4 +1,5 @@
-﻿using Xpenses.API.Common.Api;
+﻿using System.Security.Claims;
+using Xpenses.API.Common.Api;
 using Xpenses.Core.Entities;
 using Xpenses.Core.Handlers;
 using Xpenses.Core.Requests.Transactions;
@@ -14,9 +15,9 @@ public class UpdateTransactionEndpoint : IEndpoint
             .WithSummary("Atualiza uma transação")
             .Produces<Response<Transaction?>>();
 
-    private static async Task<IResult> HandleAsync(ITransactionHandler handler, UpdateTransactionRequest request, long id)
+    private static async Task<IResult> HandleAsync(ClaimsPrincipal user, ITransactionHandler handler, UpdateTransactionRequest request, long id)
     {
-        request.UserId = "123";
+        request.UserId = user.Identity?.Name ?? string.Empty;;
         request.Id = id;
 
         var result = await handler.UpdateAsync(request);

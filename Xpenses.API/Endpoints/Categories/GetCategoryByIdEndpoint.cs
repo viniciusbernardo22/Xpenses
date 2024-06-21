@@ -1,4 +1,5 @@
-﻿using Xpenses.API.Common.Api;
+﻿using System.Security.Claims;
+using Xpenses.API.Common.Api;
 using Xpenses.Core.Entities;
 using Xpenses.Core.Handlers;
 using Xpenses.Core.Requests.Categories;
@@ -14,12 +15,12 @@ public class GetCategoryByIdEndpoint : IEndpoint
         .WithSummary("Procura uma categoria pelo Id")
         .Produces<Response<Category?>>();
 
-    private static async Task<IResult> HandleAsync(ICategoryHandler handler, long id)
+    private static async Task<IResult> HandleAsync(ClaimsPrincipal user, ICategoryHandler handler, long id)
     {
         var request = new GetCategoryByIdRequest
         {
             Id = id,
-            UserId = "123"
+            UserId = user.Identity?.Name ?? string.Empty,
         };
         
         var result = await handler.GetByIdAsync(request);

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
 using Xpenses.API.Common.Api;
 using Xpenses.Core.Entities;
 using Xpenses.Core.Handlers;
@@ -15,12 +16,12 @@ public class GetTransactionByIdEndpoint : IEndpoint
         .WithSummary("Busca uma transação pelo Id")
         .Produces<Response<Transaction?>>();
 
-    private static async Task<IResult> HandleAsync(ITransactionHandler handler, [FromQuery] long id)
+    private static async Task<IResult> HandleAsync(ClaimsPrincipal user, ITransactionHandler handler, [FromQuery] long id)
     {
         var request = new GetTransactionByIdRequest
         {
             Id = id,
-            UserId = "123"
+            UserId = user.Identity?.Name ?? string.Empty
         };
 
         var response = await handler.GetByIdAsync(request);
