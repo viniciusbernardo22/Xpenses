@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Xpenses.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f2b16553dc8180a68fb5bc8198394bcb93cfb16")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62540e703e4fb594fc8f590c2c8b1f30a4155a67")]
 [assembly: System.Reflection.AssemblyProductAttribute("Xpenses.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Xpenses.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
