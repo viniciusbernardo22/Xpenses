@@ -26,9 +26,8 @@ public static class BuilderConfiguration
     }
 
     private static void AddConfiguration(this WebApplicationBuilder builder)
-    {
-        Configuration.ConnectionString = builder.Configuration.GetConnectionString("Default");
-    }
+    => Configuration.ConnectionString = builder.Configuration.GetConnectionString("Default");
+    
 
     private static void AddDocumentation(this WebApplicationBuilder builder)
     {
