@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# 
+#
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xpenses.Core", "Xpenses.Core\Xpenses.Core.csproj", "{41523FFF-A6E5-40C8-B6CC-5CC7F4F94FD6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xpenses.API", "Xpenses.API\Xpenses.API.csproj", "{FB2B4353-BA72-4312-8870-5701B05AD49C}"
