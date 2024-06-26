@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xpenses.Core", "Xpenses.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xpenses.API", "Xpenses.API\Xpenses.API.csproj", "{FB2B4353-BA72-4312-8870-5701B05AD49C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xpenses.Test", "Xpenses.Test\Xpenses.Test.csproj", "{A6C8DAA3-EBE0-424E-8166-9FC697F3DB40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{FB2B4353-BA72-4312-8870-5701B05AD49C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB2B4353-BA72-4312-8870-5701B05AD49C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB2B4353-BA72-4312-8870-5701B05AD49C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C8DAA3-EBE0-424E-8166-9FC697F3DB40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C8DAA3-EBE0-424E-8166-9FC697F3DB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C8DAA3-EBE0-424E-8166-9FC697F3DB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C8DAA3-EBE0-424E-8166-9FC697F3DB40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

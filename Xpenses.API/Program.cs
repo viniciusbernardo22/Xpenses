@@ -1,17 +1,19 @@
 using Xpenses.API;
+using Xpenses.API.Common.Api;
 using Xpenses.API.Endpoints;
+using Xpenses.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.ConfigureServices(builder);
+builder.ApplyBuilderConfigurations();
 
 var app = builder.Build();
 
-app.UseAuthentication();
-app.UseAuthorization();
+if(app.Environment.IsDevelopment())
+    app.ConfigureDevEnvironment();
 
-app.UseSwagger();
-app.UseSwaggerUI();
+app.UseCors(Configuration.CorsPolicyName);
+app.UseSecurity();
 
 app.MapEndpoints();
 
