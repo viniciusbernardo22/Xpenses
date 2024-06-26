@@ -4,13 +4,7 @@ using Xpenses.API.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddConfiguration();
-builder.AddSecurity();
-builder.AddDataContexts();
-builder.AddCrossOrigin();
-builder.AddDocumentation();
-builder.AddServices();
-builder.AddOpenTelemetry();
+builder.ApplyBuilderConfigurations();
 
 var app = builder.Build();
 

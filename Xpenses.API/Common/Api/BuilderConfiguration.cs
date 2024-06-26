@@ -10,22 +10,33 @@ using Xpenses.API.Models;
 using Xpenses.Core;
 using Xpenses.Core.Handlers;
 
-namespace Xpenses.API;
+namespace Xpenses.API.Common.Api;
 
 public static class BuilderConfiguration
 {
-    public static void AddConfiguration(this WebApplicationBuilder builder)
+    public static void ApplyBuilderConfigurations(this WebApplicationBuilder builder)
+    {
+        builder.AddConfiguration();
+        builder.AddSecurity();
+        builder.AddDataContexts();
+        builder.AddCrossOrigin();
+        builder.AddDocumentation();
+        builder.AddServices();
+        builder.AddOpenTelemetry();
+    }
+
+    private static void AddConfiguration(this WebApplicationBuilder builder)
     {
         Configuration.ConnectionString = builder.Configuration.GetConnectionString("Default");
     }
 
-    public static void AddDocumentation(this WebApplicationBuilder builder)
+    private static void AddDocumentation(this WebApplicationBuilder builder)
     {
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(options => options.CustomSchemaIds(n => n.FullName));
     }
 
-    public static void AddSecurity(this WebApplicationBuilder builder)
+    private static void AddSecurity(this WebApplicationBuilder builder)
     {
         builder.Services
             .AddAuthentication(IdentityConstants.ApplicationScheme)
@@ -33,7 +44,7 @@ public static class BuilderConfiguration
         builder.Services.AddAuthorization();
     }
     
-    public static void AddDataContexts(this WebApplicationBuilder builder)
+    private static void AddDataContexts(this WebApplicationBuilder builder)
     {
         builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(Configuration.ConnectionString));
         
@@ -43,13 +54,13 @@ public static class BuilderConfiguration
             .AddApiEndpoints();
     } 
     
-    public static void AddServices(this WebApplicationBuilder builder)
+    private static void AddServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddTransient<ICategoryHandler, CategoryHandler>();
         builder.Services.AddTransient<ITransactionHandler, TransactionHandler>();
     }
     
-    public static void AddOpenTelemetry(this WebApplicationBuilder builder)
+    private static void AddOpenTelemetry(this WebApplicationBuilder builder)
     {
         // Open telemetry configuration //
         builder.Services.AddOpenTelemetry()
@@ -69,8 +80,10 @@ public static class BuilderConfiguration
         builder.Logging.AddOpenTelemetry(options => options.AddOtlpExporter());
     }
 
-    public static void AddCrossOrigin(this WebApplicationBuilder builder)
+    private static void AddCrossOrigin(this WebApplicationBuilder builder)
     {
         
     }
+    
+    
 }
