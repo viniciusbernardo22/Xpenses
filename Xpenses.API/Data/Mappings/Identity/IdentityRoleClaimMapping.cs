@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Xpenses.API.Data.Mappings.Identity;
 
-public class IdentityRoleClaimMapping : IEntityTypeConfiguration<IdentityRoleClaim<long>>
+public class IdentityRoleClaimMapping
+    : IEntityTypeConfiguration<IdentityRoleClaim<long>>
 {
     public void Configure(EntityTypeBuilder<IdentityRoleClaim<long>> builder)
     {

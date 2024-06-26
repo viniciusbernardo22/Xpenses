@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Xpenses.API.Data;
 
@@ -11,9 +12,11 @@ using Xpenses.API.Data;
 namespace Xpenses.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240621141832_v0.0.2")]
+    partial class v002
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -217,7 +220,6 @@ namespace Xpenses.API.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
                         .HasMaxLength(180)
                         .HasColumnType("nvarchar(180)");
 
