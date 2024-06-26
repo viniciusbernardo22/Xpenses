@@ -26,9 +26,14 @@ public static class BuilderConfiguration
     }
 
     private static void AddConfiguration(this WebApplicationBuilder builder)
-    => Configuration.ConnectionString = builder.Configuration.GetConnectionString("Default");
+    {
+        Configuration.ConnectionString = builder.Configuration.GetConnectionString("Default") ?? string.Empty;;
+        Configuration.BackendUrl = builder.Configuration.GetValue<string>("BackendUrl")?? string.Empty;;
+        Configuration.FrontEndUrl = builder.Configuration.GetValue<string>("FrontendUrl")?? string.Empty;;
+        Configuration.CorsPolicyName = builder.Configuration.GetValue<string>("PolicyName") ?? string.Empty;
+    }
+     
     
-
     private static void AddDocumentation(this WebApplicationBuilder builder)
     {
         builder.Services.AddEndpointsApiExplorer();
@@ -81,8 +86,17 @@ public static class BuilderConfiguration
 
     private static void AddCrossOrigin(this WebApplicationBuilder builder)
     {
-        
+        builder.Services.AddCors(
+            options => options.AddPolicy(
+                    Configuration.CorsPolicyName,
+                    policy => policy
+                        .WithOrigins(Configuration.BackendUrl, Configuration.FrontEndUrl)
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials()
+        ));
     }
+
     
     
 }
