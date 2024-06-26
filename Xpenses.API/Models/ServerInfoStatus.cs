@@ -52,7 +52,7 @@ public class ServerInfoStatus
         return cpuUsage;
     }
 
-    private string GetMemoryUsage()
+    private static string GetMemoryUsage()
     {
         var memoryUsage = string.Empty;
 
@@ -73,7 +73,7 @@ public class ServerInfoStatus
         return memoryUsage;
     }
 
-    private string GetApplicationVersion()
+    private static string GetApplicationVersion()
     {
         return Assembly.GetExecutingAssembly().GetName().Version!.ToString();
     }
