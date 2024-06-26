@@ -1,4 +1,5 @@
 using Xpenses.API;
+using Xpenses.API.Common.Api;
 using Xpenses.API.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,11 +14,10 @@ builder.AddOpenTelemetry();
 
 var app = builder.Build();
 
-app.UseAuthentication();
-app.UseAuthorization();
+if(app.Environment.IsDevelopment())
+    app.ConfigureDevEnvironment();
 
-app.UseSwagger();
-app.UseSwaggerUI();
+app.UseSecurity();
 
 app.MapEndpoints();
 
