@@ -28,7 +28,7 @@ public class ServerInfoStatus
 
     private static string GetCPUUsage()
     {
-        var cpuUsage = string.Empty;
+        string cpuUsage;
 
         try
         {
@@ -54,7 +54,7 @@ public class ServerInfoStatus
 
     private static string GetMemoryUsage()
     {
-        var memoryUsage = string.Empty;
+        string memoryUsage;
 
         try
         {
